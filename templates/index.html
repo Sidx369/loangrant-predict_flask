@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Grant Prediction</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <!--<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">--> <!-- For integrating Flask and HTML -->
+    <link rel="stylesheet" href="..\static\style.css"><!-- For running locally -->
+</head>
+
+<body>
+    <div class="login">
+        <h1>Loan Grant Prediction</h1>
+        <form action="{{ url_for('predict')}}" method="post">
+            <label for="Gender">Gender</label>
+            <select id="Gender" name="Gender">
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+            </select><br>
+            <label for="Married">Married</label>
+            <select id="Married" name="Married">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br>
+            <label for="Dependents">Dependents</label>
+            <select id="Dependents" name="Dependents">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3+">3+</option>
+            </select><br>
+            <label for="Education">Education</label>
+            <select id="Education" name="Education">
+                <option value="Graduate">Graduate</option>
+                <option value="Not Graduate">Not Graduate</option>
+            </select><br>
+            <label for="Self Employed">Self Employed</label>
+            <select id="Self Employed" name="Self Employed">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br>
+
+            Applicant Income <input type="text" name="ApplicantIncome" placeholder="Enter income" required="required" /><br>
+            Coapplicant Income <input type="text" name="CoapplicantIncome" placeholder="Enter income" required="required" /><br>
+            Loan Amount <input type="text" name="LoanAmount" placeholder="Enter amount" required="required" /><br>
+            Loan Amount Term <input type="text" name="Loan_Amount_Term" placeholder="Enter amount" required="required" /><br>
+       
+            <label for="Credit History">Credit History <label id="credits">(1: has all debts paid, 0: not paid)</label></label>
+            <select id="Credit History" name="Credit History">
+                <option value="1">1</option>
+                <option value="0">0</option>
+            </select><br>
+            <label for="Property Area">Property Area</label>
+            <select id="Property Area" name="Property Area">
+                <option value="Rural">Rural</option>
+                <option value="Semiurban">Semiurban</option>
+                <option value="Urban">Urban</option>
+            </select><br>
+            <br>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+        </form>
+        <br>
+        <br>
+        {{ output }}
+
+    </div>
+
+</body>
+</html>
