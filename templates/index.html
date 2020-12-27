@@ -43,10 +43,10 @@
                 <option value="No">No</option>
             </select><br>
 
-            Applicant Income <input type="text" name="ApplicantIncome" placeholder="Enter income" required="required" /><br>
-            Coapplicant Income <input type="text" name="CoapplicantIncome" placeholder="Enter income" required="required" /><br>
-            Loan Amount <input type="text" name="LoanAmount" placeholder="Enter amount" required="required" /><br>
-            Loan Amount Term <input type="text" name="Loan_Amount_Term" placeholder="Enter amount" required="required" /><br>
+            Applicant Income <input type="number" min="0" step="1" name="ApplicantIncome" placeholder="Enter income" required="required" /><br>
+            Coapplicant Income <input type="number" min="0" step="1" name="CoapplicantIncome" placeholder="Enter income" required="required" /><br>
+            Loan Amount <input type="number" min="0" step="1" name="LoanAmount" placeholder="Enter amount" required="required" /><br>
+            Loan Amount Term <input type="number" min="0" step="1" name="Loan_Amount_Term" placeholder="Enter amount" required="required" /><br>
        
             <label for="Credit History">Credit History <label id="credits">(1: has all debts paid, 0: not paid)</label></label>
             <select id="Credit History" name="Credit History">
